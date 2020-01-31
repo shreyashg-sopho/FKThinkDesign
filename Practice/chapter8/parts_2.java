@@ -1,5 +1,7 @@
+
 package learnJava;
-public class parts_1{
+
+public class parts_2{
 	public static  void main(String [] args)
 	{
 		Part chain = new Part();
@@ -29,7 +31,7 @@ public class parts_1{
 
 		
 		
-	}
+	}}
 
 class Bicycle{
 	String size;
@@ -37,12 +39,12 @@ class Bicycle{
 
 	void spares()
 	{
-		if (parts.spares() == true)
+		if (parts.spares())
 		{
-			System.out.println("There is a need of spare object ");
+			System.out.println("need of spare object ");
 		}
 		else
-			System.out.println("There is no need of spare object ");
+			System.out.println("no need of spare object ");
 
 
 	}
@@ -62,7 +64,11 @@ class Parts{
 class Part{
 	String name;
 	String description;
-	String need_spare = true;
+	boolean need_spare = true;
+
+	boolean need_spare(){
+		if(this.need_spare){return true;}
+	return false;}
 
 }
 
