@@ -43,5 +43,73 @@ Changing a class that has many dependents will result in widespread consequences
 
 
 
+CREATING FLEXIBLE INTERFACES
+
+Using a kitchen analogy: your objects should "order off a menu" instead of "cooking in the kitchen".
+Ask "what" instead of asking or telling "how".
+Objects that have a simple context are easy to test, objects with a complicated context are more difficult to test.
+Law of Demeter : Talk only to your immiediate neighbour.
+The problem with Demeter violations (like customer.bicycle.wheel.rotate) is that they show that code (customer) knows too much about how other code works. It's a practical case of tight coupling.
+
+
+
+ACQURING BEHAVIOUR THROUGH INTERFACES
+
+Subclasses are specializations of their superclasses
+Everything the parent class is, plus some more.
+
+
+
+
+SHARING ROLE BEHAVIOUS WITH MODULES
+
+Method Lookup Flow
+
+Including a module inserts it's method "above" it's superclass, in the object hierarchy.
+Therefore, if a method exists anywhere in the hierarchy between subclass and superclass, and also in an included module, the superclass method wins out.
+Writing Inheritable Code
+
+Recognize the antipatterns
+Insist on the abstraction
+Honor the contract (Liskov Substitution Principle)
+Use the template method pattern
+Preemptively decouple classes (avoid super)
+Create shallow hierarchies
+
+Insist On The Abstraction
+Create shallow Hierarchies
+
+
+
+
+COMBINING OBJECTS WITH COMPOSITION
+
+Composition describes "x" has a realationship with.
+Composition: objects "inside" have no meaning outside that context.
+Aggregation: like composition except objects "inside" have meaning outside that context.
+
+
+
+DESIGNING COST EFFECTIVE TESTS
+3 Skills Needed to Write Changeable Code:
+Understand OO design
+Skilled at refactoring code
+Ability to write high-value tests
+
+Tests free you to refactor with impunity.
+Intentional Testing
+
+Benefits of testing
+Finding bugs
+Supplying documentation ("Tests provide the only reliable documentation of design.")
+Deferring design decisions ("When your tests depend on interfaces you can refactor the underlying code with reckless abandon.")
+Supporting abstractions
+Exposing design flaws
+Knowing what to text and when to text.
+
+
+
+
+
 
 
