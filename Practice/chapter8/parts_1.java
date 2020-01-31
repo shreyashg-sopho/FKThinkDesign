@@ -1,13 +1,13 @@
+
 package learnJava;
 public class parts_1{
 	public static  void main(String [] args)
 	{
-		System.out.println("Just checking if it compiles or not, and it did !");
 		Bicycle roadbike = new Bicycle();
 		roadbike.size = "L";
 		roadbike.parts = new RoadBikeParts();
-		roadbike.parts.tape_color = "red";
-		System.out.println(roadbike.spares());
+		roadbike.parts.setTapeColor("red");// = "red";
+		roadbike.spares();
 	}
 }
 
@@ -15,6 +15,9 @@ class Bicycle{
 	String size;
 	Parts parts;
 
+	Bicycle(){
+		parts=null;
+	}
 	void spares()
 	{
 		parts.spares();
@@ -27,25 +30,26 @@ class Parts{
 
 	void spares()
 	{
-		tire_size = tire_size;
-		chain  = chain;
+		
 		System.out.println("tire_size is "+ tire_size + " chain is " + chain );
 	}
 	String default_tire_size()
 	{
-		System.out.println("Not implemented error");
+		System.out.println("Error");
 		return null;
 	}
 
 	void local_spares()
 	{
-		System.out.println("Nothing in spare");
+		System.out.println("Nothing in spare func");
 	}
 
 	String default_chain()
 	{
 		return "10-speed";
 	}
+
+	void setTapeColor(String s){}
 
 
 }
@@ -57,7 +61,9 @@ class RoadBikeParts extends Parts{
 	String tape_color ;
 
 
-	void local_spares()
+
+	
+	void spares()
 	{
 		System.out.println("tape_color "+ tape_color);
 	}
@@ -66,6 +72,9 @@ class RoadBikeParts extends Parts{
 	{
 		return "23";
 	}
+	void setTapeColor(String s){this.tape_color=s;}
+
+}
 
 
 class MountainBikeParts extends Parts{
@@ -73,7 +82,7 @@ class MountainBikeParts extends Parts{
 	String front_shock;
 	String rear_shock;
 
-	void local_spares()
+	void spares()
 	{
 	System.out.println("rear_shock  "+rear_shock);
 	}
@@ -91,4 +100,4 @@ class MountainBikeParts extends Parts{
 
 
 
-}
+
